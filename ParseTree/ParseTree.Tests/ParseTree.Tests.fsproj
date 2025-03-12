@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MapForTree\MapForTree.fsproj" />
+    <ProjectReference Include="..\ParseTree\ParseTree.fsproj" />
   </ItemGroup>
 
 </Project>
