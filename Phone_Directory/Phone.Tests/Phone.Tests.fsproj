@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PrimeNumbers\PrimeNumbers.fsproj" />
+    <ProjectReference Include="..\Phone\Phone.fsproj" />
   </ItemGroup>
 
 </Project>
