@@ -1,4 +1,4 @@
-namespace Local_Network
+namespace Network
 
 
 let simulate network =

@@ -1,11 +1,11 @@
 namespace Network
 open Computer
 
-type Network(computers: Computer list, adjacencyMatrix: int[][]) =
+type Network(computers: Computer list, matrix: int[][]) =
     do
-        for i in 0..adjacencyMatrix.Length-1 do
-            for j in 0..adjacencyMatrix[i].Length-1 do
-                if adjacencyMatrix[i][j] = 1 then
+        for i in 0..matrix.Length-1 do
+            for j in 0..matrix[i].Length-1 do
+                if matrix[i][j] = 1 then
                     computers[i].Neighbors.Add(computers[j])
 
     member _.Computers = computers

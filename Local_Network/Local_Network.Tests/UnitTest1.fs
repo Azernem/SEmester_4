@@ -1,3 +1,4 @@
+namespace Local_Networks.Tests
 open NUnit.Framework
 open FsUnit
 open Network
