@@ -1,15 +1,15 @@
-﻿// Declaration of the Test module
+﻿// Declaration of the Test module Nemat Musaev
 namespace Test
 
 module Test = 
     // Sequence of 1 and -1
-    let endlessSequence = Seq.initInfinite (fun i -> if i % 2 = 0 then 1 else -1)
+    let endLessSequence = Seq.initInfinite (fun i -> if i % 2 = 0 then 1 else -1)
     
     // simple sequence
     let simpleSequence = Seq.initInfinite (fun i -> i + 1)
     
     // Result of elements from two sequences
-    let resultEndlessSequence () = Seq.map (fun (x, y) -> x * y) (Seq.zip endlessSequence simpleSequence)
+    let resultEndlessSequence () = Seq.map (fun (x, y) -> x * y) (Seq.zip endLessSequence simpleSequence)
 
     // Type for a binary tree
     type Tree<'a> = 
@@ -25,8 +25,8 @@ module Test =
             List.concat [rightValue; filterTree predicate left; filterTree predicate right] 
 
     // Type for a priority queue
-    type PriorityQueue() =
-        let mutable queue = [] 
+    type PriorityQueue<'T>() =
+        let mutable queue = [] : ('T * int) list
 
         // Add an element to the queue
         member this.Enqueue(value, priority) =
