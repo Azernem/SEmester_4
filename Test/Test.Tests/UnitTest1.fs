@@ -12,7 +12,6 @@ type TreeTests () =
 
     [<Test>]
     member this.``Test ResultEndlessSequence`` () =
-        let list = Seq.take 4 resultEndlessSequence
-        let result = Seq.ofList [1; -2; 3; -4]
+        let list = Seq.take 4 (resultEndlessSequence ()) |> Seq.toList
+        let result = [1; -2; 3; -4]
         Assert.AreEqual(result, list)
-        
