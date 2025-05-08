@@ -14,7 +14,7 @@ public class Tests
     [Test]
     public void GetResultOfCorrectArray()
     {
-        var array = new int[] {5, 4, 3, 2, 1};
+        var array = new int[] {5, 2, 8, 1, 3};
         var res = Operation.SummMin(array);
         var expected = 3;
         Assert.That(res, Is.EqualTo(expected));
@@ -61,6 +61,18 @@ public class Tests
         var array = Enumerable.Range(0, 1000).Select(i => i * i).ToArray();
         var res = Operation.SummMin(array);
         var expected = 1;
+        Assert.That(res, Is.EqualTo(expected));
+    }
+
+    /// <summary>
+    /// Get Result Of Correct Big Array
+    /// </summary>
+    [Test]
+    public void GetResultOfArrayMaxValue()
+    {
+        var array = new int[] {int.MaxValue, 39, int.MaxValue, 12, 24};
+        var res = Operation.SummMin(array);
+        var expected = 36;
         Assert.That(res, Is.EqualTo(expected));
     }
 }

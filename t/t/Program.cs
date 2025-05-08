@@ -17,8 +17,6 @@ namespace Work;
         /// <exception cref="ArgumentException">exception if array hasnt minimum two elements.</exception>
         public static int SummMin(int[] mas)
         {
-            Array.Sort(mas);
-
             if (mas == null)
             {
                 throw new ArgumentNullException("array mustnt be null");
@@ -29,7 +27,22 @@ namespace Work;
                 throw new ArgumentException("array must contain a minimum two numbers");
             }
 
-            return mas[0] + mas[1];
+            var (min2, min1) = (Math.Min(mas[0], mas[1]), Math.Max(mas[0], mas[1]));
+            for (int i = 2; i < mas.Length; i++)
+            {
+                if (mas[i] < min2)
+                {
+                    min1 = min2;
+                    min2 = mas[i];
+                }
+                
+                else
+                {
+                    min1 = Math.Min(min1, mas[i]);
+                }
+            }
+
+            return min1 + min2;
         }
     }
     
