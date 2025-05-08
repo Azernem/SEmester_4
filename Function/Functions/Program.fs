@@ -1,7 +1,4 @@
-﻿// For more information see https://aka.ms/fsharp-console-apps
-printfn "Hello from F#"
-
-module Functions =
+﻿module Functions =
 
     /// Computes factorial of number
     let rec factorial number = 
@@ -13,12 +10,12 @@ module Functions =
     /// Computes Fibonacci in number
     let rec fibonacci number = 
         if number < 0 then None
-        elif number = 0 then Some(0)
-        elif number = 1 then Some(1)
         else 
-            match fibonacci (number - 1), fibonacci(number - 2) with
-            | Some(a), Some(b) -> Some(a + b)
-            | _ -> None
+            let rec loop n a b = 
+                match number with
+                | _ -> loop (number + 1) b (a + b)
+                | number -> a
+            Some (loop 0 0 1) 
 
     /// Reverses a list.
     let reverseList list = 
@@ -40,7 +37,9 @@ module Functions =
     let raisePowerTwo n m = 
         if m < 0 then None
         else
+            let endPower = pown 2 n
             let rec recRaisePowerTwo acc = 
                 match acc with
-                | head :: tail -> if head = (pown 2 n) then Some(acc) else recRaisePowerTwo ((head / 2) :: acc)
+                | head :: tail -> if head = endPower then Some(acc) else recRaisePowerTwo ((head / 2) :: acc)
+                | _ -> raise (System.NullReferenceException("Список оказался пустым"))
             recRaisePowerTwo [pown 2 (n + m)]
