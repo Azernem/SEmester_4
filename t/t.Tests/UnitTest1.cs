@@ -75,4 +75,14 @@ public class Tests
         var expected = 36;
         Assert.That(res, Is.EqualTo(expected));
     }
+
+     /// <summary>
+    /// Tests overflow when summs int.MaxValue
+    /// </summary>
+    [Test]
+    public void GetResultOfArrayMaxValue_ThrowsOverflowException()
+    {
+        var array = new int[] {int.MaxValue, int.MaxValue, 1};
+        Assert.Throws<OverflowException>(() => Operation.SummMin(array));
+    }
 }
