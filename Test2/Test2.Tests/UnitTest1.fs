@@ -57,4 +57,16 @@ type BlockingQueueTests () =
         Assert.AreEqual(produced.Length, consumed.Count)
         Assert.AreEqual(Set.ofList produced, Set.ofSeq consumed)
 
+    [<Test>]
+    member _.SimpleBlockingTest () =
+        let queue = BlockingQueue<int>()
+        let consumer = Task.Run(fun () ->
+            queue.Dequeue()
+        )
+        Thread.Sleep 500
+
+        queue.Enqueue(99)
+        let result = consumer.Result
+        Assert.AreEqual(99, result)
+
 
