@@ -21,13 +21,17 @@ type MultiThreadLazy<'a>(supplier: unit -> 'a) =
     let mutable result = None
     interface ILazy<'a> with
         member _.Get() =
-            lock lockObject (fun () ->
+            match result with
+            | Some value -> value
+            | None ->
+                lock lockObject (fun () ->
+                    if result = None then 
+                        result <- Some (supplier())
+                        supplier() <- None
+                )
                 match result with
                 | Some value -> value
-                | None ->
-                    result <- Some (supplier())
-                    result.Value
-            )
+                | None -> raise (System.InvalidOperationException("Value has not been calculated."))
 
 /// Multythreadind with repeated evaluation and right cashing.
 type LockFreeLazy<'a>(supplier: unit -> 'a) =
