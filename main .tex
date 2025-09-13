@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+
+\begin{document}
+
+\section{Нормализация}
+   $
+(\lambda a.(\lambda b.b\ b)(\lambda b.b\ b))b((\lambda c.(c\ b))(\lambda a.a)) \to \\
+\text{$\beta$-редукция} \\
+((\lambda b.b\ b)(\lambda b.b\ b))((\lambda c.(c\ b))(\lambda a.a)) \to \\
+\text{$\beta$-редукция, бесконечная редукция, норамльной формы не будет} \\
+((\lambda b.b\ b)(\lambda b.b\ b))((\lambda c.(c\ b))(\lambda a.a)) \to \\
+\text{$\beta$-редукция} \\
+((\lambda b.b\ b)(\lambda b.b\ b))((\lambda a.a)b) \to \\
+\text{$\beta$-редукция, тождественная функция} \\
+((\lambda b.b\ b)(\lambda b.b\ b))b \to \\
+\text{слева бесконечная редукция, терм воспроизводит самого себя --- нет нормальной формы}
+$
+слева бесконечная редукция, терм воспроизводит самого себя --- нет нормальной формы
+
+
+
+\section{S K K}
+
+\begin{align*}
+S &= \lambda x.\lambda y.\lambda z.x z (y z) \\
+K &= \lambda x.\lambda y.x \\
+I &= \lambda x.x
+\end{align*}
+
+Докажем 
+
+\begin{align*}
+S K K &= (\lambda x.\lambda y.\lambda z.x z (y z)) K K \\
+&\to_\beta (\lambda y.\lambda z.K z (y z)) K \\
+&\to_\beta \lambda z.K z (K z) \\
+&= \lambda z.(\lambda x.\lambda y.x) z (K z) \\
+&\to_\beta \lambda z.(\lambda y.z) (K z) \\
+&\to_\beta \lambda z.z \\
+&= I
+\end{align*}
+
+\end{document}
