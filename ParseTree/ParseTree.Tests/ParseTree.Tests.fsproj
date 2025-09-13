@@ -4,13 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-    <GenerateProgramFile>false</GenerateProgramFile>
+    <GenerateProgramFile>true</GenerateProgramFile>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="UnitTest1.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="ParseTree.Tests.fs" />
+ 
   </ItemGroup>
 
   <ItemGroup>
