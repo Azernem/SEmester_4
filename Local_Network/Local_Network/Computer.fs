@@ -1,10 +1,33 @@
 namespace Computer
 open OS
 
+/// Class for computers
 type Computer(id: int, os: OS) =
-    let mutable infected = false
+    let mutable infect = false
+    let neighbors = ResizeArray<Computer>()  // ← СОЗДАЕМ ОДИН РАЗ в конструкторе
+    
+    let probability =
+        match os with
+        | Windows -> 1.0    
+        | Linux -> 0.5    
+        | MacOS -> 0.7  
     member _.Id = id
-    member _.OS = os
-    member _.Infected = infected
-    member _.Neighbors = ResizeArray<Computer>()
-    member _.Infect() = infected <- true
+    /// type of OS
+    member _.OS = os  
+
+    /// probabilty in dependence of OS
+    member _.Probability = probability
+
+    /// Isn it infected
+    member _.Infected = infect
+    /// Neightbors in computer network
+    member _.Neighbors = neighbors
+
+    /// Infect with probabilitu one of computers
+    member _.InfectProbability() =
+        if not infect then
+            let checker = System.Random().NextDouble()
+            if checker <= probability then 
+                infect <- true    
+    member _.Infect() = infect <- true 
+        

@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="OS.fs" />
+    <Compile Include="Computer.fs" />
+    <Compile Include="Network.fs" />
+    <Compile Include="Simulate.fs" />
+
   </ItemGroup>
 
 </Project>
