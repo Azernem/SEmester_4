@@ -2,16 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Lambda_interpreter.Tests</RootNamespace>
+    <RootNamespace>LambdaInterpreter.Tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
-    <GenerateProgramFile>false</GenerateProgramFile>
+    <GenerateProgramFile>true</GenerateProgramFile>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="UnitTest1.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Lambda-interpreter.Tests.fs" />
   </ItemGroup>
 
   <ItemGroup>

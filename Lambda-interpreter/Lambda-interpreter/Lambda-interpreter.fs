@@ -1,9 +1,9 @@
 ﻿module Interpreter
 
-type Lambdaexp =
+type LambdaExpression =
     | Var of string
-    | Abstraction of string * Lambdaexp
-    | Application of Lambdaexp * Lambdaexp
+    | Abstraction of string * LambdaExpression
+    | Application of LambdaExpression * LambdaExpression
 
 let rec aConversionAndReplace firstName secondName exp =
     match exp with
@@ -19,8 +19,7 @@ let rec freeVar exp =
     | Abstraction (x, body) -> Set.remove x (freeVar body)
     | Application (f, a) -> Set.union (freeVar f) (freeVar a)
 
-
-let rec update used acc= 
+let rec update used acc = 
     if Set.contains acc used then update used (acc + string 0) else acc 
 
 let rec substitute x s e =
