@@ -1,3 +1,7 @@
+// <copyright file="Program.cs" company="NematMusaev">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace Phone
 open System.IO
 open System
