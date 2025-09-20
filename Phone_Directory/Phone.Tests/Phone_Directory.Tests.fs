@@ -4,6 +4,7 @@ open NUnit.Framework
 open FsUnit
 open Phone.Directory
 
+/// Tests for phone directory
 [<Test>]
 let ``Tests Add Contact`` () = 
     let book = []
