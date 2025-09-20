@@ -12,6 +12,7 @@ let ``Tests Add Contact`` () =
     newBook[0] |> should equal ("Jone", "566577")
     newBook |> should haveLength 1
 
+/// Writes and after prints contacts in phone
 [<Test>]
 let ``Tests write and print contact`` () = 
     let book = []
@@ -22,6 +23,7 @@ let ``Tests write and print contact`` () =
     loaded |> should contain ("Jone", "566577")
     if System.IO.File.Exists(path) then System.IO.File.Delete(path)
 
+///find number by name
 [<Test>]
 let ``Tests find number`` () = 
     let book = []
