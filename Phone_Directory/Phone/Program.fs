@@ -32,6 +32,7 @@ module Directory =
 /// Interactive process of phone using
 module Interactive = 
     let run() = 
+        Directory.CreateDirectory("../Details") |> ignore
         let path = "../Details/phone.txt"
         printfn "Phone Directory with Interactive Mode"
         printfn "Commands:"
@@ -77,7 +78,7 @@ module Interactive =
                     if List.isEmpty book then 
                         printfn "Database is empty"
                     else
-                        book |> List.iter (fun (name, number) -> printfn "%s - %s" name number)  // Добавил n
+                        book |> List.iter (fun (name, number) -> printfn "%s - %s" name number) 
                     processRequest book
                 
                 | [|"save"|] ->
