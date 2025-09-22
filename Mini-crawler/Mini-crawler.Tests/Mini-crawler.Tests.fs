@@ -1,9 +1,9 @@
+namespace MiniCrawler.Tests
 open NUnit.Framework
 open FsUnit
 open System.Text.RegularExpressions
 open MiniCrawler
 
-[<TestFixture>]
 type FuncLinksTests() =
 
     let linkRegex = Regex(@"<a\s+href=""(?<link>http[^""]+)""", RegexOptions.IgnoreCase)
@@ -19,8 +19,8 @@ type FuncLinksTests() =
                 </body>
             </html>
         """
-
-        let links = funcLinks html linkRegex |> List.distinct
+        
+        let links = MiniCrawler.funcLinks html linkRegex |> List.distinct
 
         links.Length |> should equal 2
         links |> should contain "http://example.com/page1"
@@ -29,7 +29,7 @@ type FuncLinksTests() =
     [<Test>]
     member _.``Returns empty list if page without links``() =
         let html = "<html><body>No links here</body></html>"
-        let links = funcLinks html linkRegex |> List.distinct
+        let links = MiniCrawler.funcLinks html linkRegex |> List.distinct
         links |> should be Empty
 
     [<Test>]
@@ -42,9 +42,5 @@ type FuncLinksTests() =
                 null
             with ex -> ex
         Assert.That(exn, Is.Null)
-
-
-    
-         
     
   

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Mini_crawler</RootNamespace>
+    <RootNamespace>MiniCrawler</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="Mini-crawler.fs" />
   </ItemGroup>
 
 </Project>
