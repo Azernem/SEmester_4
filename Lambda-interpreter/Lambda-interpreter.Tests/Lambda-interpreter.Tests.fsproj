@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Lambda-interpreter.Tests.fs" />
+    <Compile Include="LambdaInterpreter.Tests.fs" />
   </ItemGroup>
 
   <ItemGroup>
