@@ -19,8 +19,8 @@ let rec freeVar exp =
     | Abstraction (x, body) -> Set.remove x (freeVar body)
     | Application (f, a) -> Set.union (freeVar f) (freeVar a)
 
-let rec update used acc = 
-    if Set.contains acc used then update used (acc + string 0) else acc 
+let rec getNewName used acc = 
+    if Set.contains acc used then getNewName used (acc + string 0) else acc 
 
 let rec substitute x s e =
     match e with
@@ -33,7 +33,7 @@ let rec substitute x s e =
             let freeS = freeVar s
             if Set.contains y freeS then
                 let used = Set.union (freeVar body) freeS
-                let z = update used "x"
+                let z = getNewName used "x"
                 let bodyRenamed = aConversionAndReplace y z body
                 Abstraction (z, substitute x s bodyRenamed)
             else
