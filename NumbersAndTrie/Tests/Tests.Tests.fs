@@ -1,3 +1,6 @@
+// <copyright file="Program.cs" company="NematMusaev">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 module Tests
 
 open NUnit.Framework
@@ -5,6 +8,7 @@ open FsUnit
 open FsCheck
 open Task
 
+/// Initializing equalences
 let equiValenceFirst (list: int list) = 
     Task.CountEvenNumbered1 list = Task.CountEvenNumbered2 list
 
