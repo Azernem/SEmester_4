@@ -40,9 +40,9 @@
             let endPower = pown 2 n
             let rec recRaisePowerTwo acc = 
                 match acc with
-                | head :: tail when head = endPower-> Some(acc)
-                | head :: tail -> recRaisePowerTwo((head / 2) :: acc)
-                | _ -> raise (System.NullReferenceException("Список оказался пустым"))
+                | head :: _ when head = endPower-> Some acc
+                | head :: _ -> recRaisePowerTwo(head / 2 :: acc)
+                | _ -> failwith "accumulator is empty"
             recRaisePowerTwo [pown 2 (n + m)]
 
     printfn "%A" (fibonacci 5)
