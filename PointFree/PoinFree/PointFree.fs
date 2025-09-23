@@ -8,4 +8,4 @@ module PointFree =
     let func x l = List.map (fun y -> y * x) l
     let fun1 x = List.map (fun y -> x * y)
     let fun2 x = List.map ((*) x)
-    let functionMain = (*) >> List.map 
+    let functionMain ()= (*) >> List.map 
