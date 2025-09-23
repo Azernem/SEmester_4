@@ -22,7 +22,7 @@ type Network(computers: Computer list, matrix: int[][]) =
                         newInfections.Add(neighbor)
         
         for computer in newInfections do
-            computer.InfectProbability()
+            computer.InfectComputersWithProbablilty()
 
     /// Infect without probability
     member _.SimpleInfectStep() =
