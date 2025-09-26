@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PoinFree", "PoinFree\PoinFree.fsproj", "{06EB4C6B-D217-4F39-96F5-26960200491E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06EB4C6B-D217-4F39-96F5-26960200491E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EB4C6B-D217-4F39-96F5-26960200491E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EB4C6B-D217-4F39-96F5-26960200491E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EB4C6B-D217-4F39-96F5-26960200491E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
