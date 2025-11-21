@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+<<<<<<< HEAD:MapForTree/MapForTree/MapForTree.fsproj
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+=======
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+>>>>>>> origin/main:Function/Functions/Functions.fsproj
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="MapForTree.fs" />
+  </ItemGroup>
+
+</Project>
